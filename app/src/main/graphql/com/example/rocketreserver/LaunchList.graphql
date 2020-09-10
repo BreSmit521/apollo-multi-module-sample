@@ -6,8 +6,7 @@ query LaunchList($cursor: String) {
       id
       site
       mission {
-        name
-        missionPatch(size: SMALL)
+        ...MissionFragment
       }
     }
   }

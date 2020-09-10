@@ -26,8 +26,8 @@ class LaunchListAdapter(val launches: List<LaunchListQuery.Launch>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val launch = launches.get(position)
         holder.binding.site.text = launch.site ?: ""
-        holder.binding.missionName.text = launch.mission?.name
-        holder.binding.missionPatch.load(launch.mission?.missionPatch) {
+        holder.binding.missionName.text = launch.mission?.fragments?.missionFragment?.name
+        holder.binding.missionPatch.load(launch.mission?.fragments?.missionFragment?.missionPatch) {
             placeholder(R.drawable.ic_placeholder)
         }
 

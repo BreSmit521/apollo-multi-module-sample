@@ -25,5 +25,5 @@ apollo {
 }
 
 dependencies {
-    implementation("com.apollographql.apollo:apollo-api:2.3.2-SNAPSHOT")
+    implementation("com.apollographql.apollo:apollo-api:2.4.1")
 }

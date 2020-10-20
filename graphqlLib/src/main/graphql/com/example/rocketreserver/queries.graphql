@@ -1,4 +1,0 @@
-fragment MissionFragment on Mission {
-  name
-  missionPatch(size: SMALL)
-}

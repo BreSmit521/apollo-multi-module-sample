@@ -1,0 +1,14 @@
+query AttachmentDetailsQuery($id: ID!) {
+    file(id: $id) {
+        ...FileGql
+    }
+}
+
+fragment FileGql on File {
+    id
+    filename
+    contentType
+    length
+    uploadDate
+    url
+}

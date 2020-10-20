@@ -19,25 +19,25 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        lifecycleScope.launch {
-            apolloClient(this@MainActivity).subscribe(TripsBookedSubscription()).toFlow()
-                .retryWhen { _, attempt ->
-                    delay(attempt * 1000)
-                    true
-                }
-                .collect {
-                    val trips = it.data?.tripsBooked
-                    val text = when {
-                        trips == null -> getString(R.string.subscriptionError)
-                        trips == -1 -> getString(R.string.tripCancelled)
-                        else -> getString(R.string.tripBooked, trips)
-                    }
-                    Snackbar.make(
-                        findViewById(R.id.main_frame_layout),
-                        text,
-                        Snackbar.LENGTH_LONG
-                    ).show()
-                }
-        }
+//        lifecycleScope.launch {
+//            apolloClient(this@MainActivity).subscribe(TripsBookedSubscription()).toFlow()
+//                .retryWhen { _, attempt ->
+//                    delay(attempt * 1000)
+//                    true
+//                }
+//                .collect {
+//                    val trips = it.data?.tripsBooked
+//                    val text = when {
+//                        trips == null -> getString(R.string.subscriptionError)
+//                        trips == -1 -> getString(R.string.tripCancelled)
+//                        else -> getString(R.string.tripBooked, trips)
+//                    }
+//                    Snackbar.make(
+//                        findViewById(R.id.main_frame_layout),
+//                        text,
+//                        Snackbar.LENGTH_LONG
+//                    ).show()
+//                }
+//        }
     }
 }
